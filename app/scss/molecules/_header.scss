@@ -1,0 +1,112 @@
+
+header{
+
+    $self: &;
+    
+    background-color: $black;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index:1;
+
+    @media(min-width:768px){
+        justify-content: center;
+    }
+
+    img{
+
+        &.icon-menu{
+            position: absolute;
+            right: 14px;
+            left: auto;
+            cursor: pointer;
+
+            @media(min-width:768px){
+                left: 14px;
+                right: auto;
+            }
+        }
+
+        &.icon-logo{
+
+            position: relative;
+            left: 14px;
+
+            @media(min-width:768px){
+                left: 0;
+            }
+        }
+    }
+
+    nav{
+        position: fixed;
+        left: calc(-100vw - 40px);
+        height: 100%;
+        background-color: white;
+        top: 0;
+        width: calc(100vw - 40px);
+        z-index: 2;
+        overflow: hidden;
+        transition: all 500ms;
+
+        @media(min-width:768px){
+            width: 40vw;
+            left: -40vw;
+        }
+
+        ul{
+            margin: 86px 0 0 0;
+            padding: 36px;
+
+            li{
+                margin: 0 0 24px 0;
+                border-bottom: 1px solid $cleargray;
+                padding: 0 0 24px 0;
+
+                &:last-child{
+                    border: 0;
+                }
+            }
+        }
+
+        &.open{
+            left:0vh;
+            box-shadow: #0000002e 0px 0px 36px;
+            transition: all 500ms;
+        }
+
+        img{
+
+            &.logo{
+                height: 26px;
+                margin: 0 auto;
+                left: 36px;
+                position: absolute;
+                top: 36px;
+            }
+
+            &.close{
+                height: 35px;
+                right: 36px;
+                position: absolute;
+                top: 36px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .backdrop{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        z-index: 1;
+    }
+}
+
